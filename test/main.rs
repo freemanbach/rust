@@ -1,13 +1,19 @@
 
 fn main() {
     // Integer addition
-    println!("1 + 2 = {}", 1u32 + 2);
+    println!("9 + 7 = {}", 9 + 7);
 
     // Integer subtraction
-    println!("1 - 2 = {}", 1i32 - 2);
-    // TODO ^ Try changing `1i32` to `1u32` to see why the type is important
+    println!("10 - 4 = {}", 10 - 4);
 
-    // Short-circuiting boolean logic
+    // Integer multiplication 
+    println!("3 * 4 = {}", 3 * 4);
+
+    // Integer division
+    println!("10.0 / 2.5 = {}", 10 / 2);
+    println!("10.0 / 2.5 = {}", 10.0f64 / 2f64);
+
+    // boolean logic
     println!("true AND false is {}", true && false);
     println!("true OR false is {}", true || false);
     println!("NOT true is {}", !true);
@@ -19,6 +25,7 @@ fn main() {
     println!("1 << 5 is {}", 1u32 << 5);
     println!("0x80 >> 2 is 0x{:x}", 0x80u32 >> 2);
 
-    // Use underscores to improve readability!
+    // underscores to improve readability!
     println!("One million is written as {}", 1_000_000u32);
+    println!("One million is written as {}", 1_000_000);
 }
