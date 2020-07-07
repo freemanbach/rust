@@ -41,12 +41,13 @@ fn test(v: u64){
         tvec.sort();
         for x in tvec.iter() {
             // this is causing major heartburn
-            fst+=x;
+            fst = x.clone(); 
+            print!("{}", fst);
         }
         println!();
-        fans.push(fst);
+        fans.push(fst.to_string());
         // it is not allowing me to clear the string
-        fst = String::from("");
+        fst.clear();
     }
 
     /*
