@@ -71,7 +71,9 @@ fn test_int1() -> () {
     io::stdout().flush().unwrap();
     io::stdin().read_line(&mut mess1).ok().expect("failed to read line");
     let num1 : i32 = mess1.trim().parse().unwrap();
+
     println!();
+
     let mut mess2 : String = String::new();
     print!("Enter in a number ? ");
     io::stdout().flush().unwrap();
@@ -92,7 +94,9 @@ fn test_float1() -> () {
     io::stdin().read_line(&mut mess1).ok().expect("failed to read line");
     // f32 and f64 types
     let num1 : f32 = mess1.trim().parse().unwrap();
+
     println!();
+
     let mut mess2 : String = String::new();
     print!("Enter in a decimal number ? ");
     io::stdout().flush().unwrap();
@@ -102,7 +106,45 @@ fn test_float1() -> () {
     println!("Our answer is: {}", ans);
 }
 
-fn main() {
-    test_float1();
+fn test_ifelse() -> () {
 
+    let mut tmp : String = String::new();
+    print!("Enter in a number ? ");
+    io::stdout().flush().unwrap();
+    io::stdin().read_line(&mut tmp).ok().expect("failed to read line");
+    let num : i32 = tmp.trim().parse().unwrap();
+
+    if num >= 90 {
+        println!("A");
+    } else if num >= 80 {
+        println!("B");
+    } else if num >= 70 {
+        println!("C");
+    } else if num >= 60 {
+        println!("D");
+    } else {
+        println!("F");
+    }
+}
+
+fn test_loop() -> () {
+
+    let mut a : i32 = 0;
+    loop {
+        a += 1;
+
+        if a == 5 {
+            println!("Nothing !");
+            continue;
+        }
+
+        if a == 10 {
+            println!("OK");
+            break;
+        }
+    }
+}
+
+fn main() {
+    test_loop();
 }
