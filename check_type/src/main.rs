@@ -145,6 +145,34 @@ fn test_loop() -> () {
     }
 }
 
+fn gen_lotto() -> () {
+
+    let mut lotto = Vec::new();
+    let mut rand_num : i32 = 0;
+    for n in 0..=4 {
+        rand_num = rand::thread_rng().gen_range(1..=70);
+        lotto.push(rand_num);
+    }
+
+    for n in 0..1 {
+        rand_num = rand::thread_rng().gen_range(1..=25);
+        lotto.push(rand_num);
+    }
+
+    for i in 0..lotto.len() {
+        println!("Value: {}",  lotto[i]);
+    }
+
+    // variable must be usize in while loop
+    // when printing out the values in vec
+    let mut z : usize = 0;
+    while z < lotto.len().try_into().unwrap() {
+        println!("{}",lotto[z] );
+        z += 1;
+    }
+}
+
+
 fn main() {
-    test_loop();
+    gen_lotto();
 }
