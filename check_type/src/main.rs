@@ -1,11 +1,12 @@
 
 #![allow(unused)]
-use rand::Rng;
-use std::convert::TryInto;
+
 use std::io;
+use rand::Rng;
 use std::fs::File;
-use std::cmp::Ordering;
 use std::vec::Vec;
+use std::cmp::Ordering;
+use std::convert::TryInto;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 
 fn test_bool() -> () {
@@ -143,6 +144,19 @@ fn test_loop() -> () {
             break;
         }
     }
+}
+
+fn test_ternary() -> () {
+	let my_age:i32 = 12;
+	let vote : bool = if my_age>=21 { true } else { false };
+	println!("I can has vote: {}", vote);
+}
+
+fn read_item() -> () {
+	let mut mess: String = String::new();
+	println!("Enter your mess? ");
+	io::stdin().read_line(&mut mess).unwrap();
+	println!("Mess received: {}", mess);
 }
 
 fn gen_lotto() -> () {
