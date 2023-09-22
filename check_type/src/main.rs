@@ -205,4 +205,7 @@ fn main() {
     let freeman_latte = Koffee { id, name };
     println!("{:?}" , freeman_latte);
     // let koffee2 = Koffee { id: 102, k_type: KoffeeType::ICED(-100.90), name: String::new("Ice Latte")};
+    // anon function
+    let abc = |a:i32, b:i32 | if a > b { a+b } else {a-b};
+    println!("{}" , abc(4,5));
 }
